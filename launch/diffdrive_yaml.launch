@@ -1,0 +1,9 @@
+<launch>
+  <rosparam file="$(find diffdrive)/cfg/diffdrive_params.yaml" command="load" />
+  
+  <node pkg="diffdrive" type="joy_control" name="joy_control" />
+  <node pkg="diffdrive" type="mux_node" name="mux_node" />
+  <node pkg="diffdrive" type="control_node" name="control_node" />
+  <node pkg="diffdrive" type="pose_node" name="pose_node" />
+  <node pkg="diffdrive" type="sequencer_node" name="sequencer_node" />
+</launch>

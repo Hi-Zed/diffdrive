@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="diffdrive" type="control_node_tf" name="control_node_tf" />
+  <node pkg="diffdrive" type="pose_node_tf" name="pose_node_tf">
+    <param name="x" value="0.0"/>
+    <param name="y" value="0.0"/>
+    <param name="yaw" value="0.0"/>
+  </node>
+  <node pkg="diffdrive" type="sequencer_node" name="sequencer_node" />
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="diffdrive" type="joy_control" name="joy_control" />
+  <node pkg="diffdrive" type="mux_node" name="mux_node" />
+  <node pkg="diffdrive" type="control_node" name="control_node" />
+  <node pkg="diffdrive" type="pose_node" name="pose_node">
+    <param name="x" value="0.0"/>
+    <param name="y" value="0.0"/>
+    <param name="yaw" value="0.0"/>
+  </node>
+  <node pkg="diffdrive" type="sequencer_node" name="sequencer_node" />
+</launch>
