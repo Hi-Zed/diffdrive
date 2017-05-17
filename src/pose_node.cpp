@@ -32,8 +32,8 @@ bool ROSnode::Prepare() {
     roll = 0.0;
     pitch = 0.0;
     t = -1.0;
-    odomSub = Handle.subscribe("/willy2/odom", 10, &ROSnode::odomCallback, this);
-    posePub = Handle.advertise<geometry_msgs::PoseStamped>("/willy2/pose", 10);
+    odomSub = Handle.subscribe("/odom", 10, &ROSnode::odomCallback, this);
+    posePub = Handle.advertise<geometry_msgs::PoseStamped>("/pose", 10);
     ROS_INFO("Node %s ready to run.", ros::this_node::getName().c_str());
     return true;
 }

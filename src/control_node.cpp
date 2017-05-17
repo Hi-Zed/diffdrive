@@ -34,8 +34,8 @@ void ROSnode::Prepare() {
     position = false;
     orientation = false;
     gotPose = false;
-    poseSub = Handle.subscribe("/willy2/pose", 10, &ROSnode::poseCallback, this);    
-    cmdPub = Handle.advertise<geometry_msgs::Twist>("/willy2/cmd_vel", 10);
+    poseSub = Handle.subscribe("/pose", 10, &ROSnode::poseCallback, this);    
+    cmdPub = Handle.advertise<geometry_msgs::Twist>("cmd_auto", 10);
     goalCl = Handle.serviceClient<diffdrive::GetGoal>("goal");
     
     ROS_INFO("Node %s ready to run.", ros::this_node::getName().c_str());
